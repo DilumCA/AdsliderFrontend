@@ -16,7 +16,7 @@ function ChartComponent() {
   };
 
   return (
-    <div style={{ width: '100%', maxWidth: '800px', margin: 'auto' }}>
+  <div className="w-full max-w-3xl mx-auto">
       <Line data={data} />
     </div>
   );

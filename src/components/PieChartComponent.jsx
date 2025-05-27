@@ -1,5 +1,6 @@
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from 'recharts';
+import './piechart-legend.css';
 
 const data = [
   { name: 'Fiber Users', value: 40 },
@@ -29,6 +30,12 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, outerRadius, index }) => {
     </text>
   );
 };
+
+const legendClasses = [
+  "legend-dot-fiber",
+  "legend-dot-4g",
+  "legend-dot-5g"
+];
 
 const PieChartComponent = () => {
   return (
@@ -64,9 +71,9 @@ const PieChartComponent = () => {
           {data.map((entry, index) => (
             <div
               key={index}
-              className="flex items-center space-x-2 break-words"  // Ensure text wraps and doesn't overflow
+              className="flex items-center space-x-2 break-words"
             >
-              <span className="text-xl" style={{ color: COLORS[index] }}>●</span>
+              <span className={`text-xl ${legendClasses[index]}`}>●</span>
               <span className="font-medium">{entry.name}</span>
             </div>
           ))}
