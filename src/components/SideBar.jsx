@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Drawer, List, ListItem, ListItemText, Divider, Typography } from '@mui/material';
 
+
 function Sidebar() {
   return (
     <Drawer
@@ -22,8 +23,8 @@ function Sidebar() {
       <div className="w-[240px] bg-[#1c2530] text-white pt-3 h-full">
         {/* Logo Section */}
         <div className="flex justify-center mb-4">
-          <img
-            src={'./src/assets/logo.png'}
+                 <img
+            src="https://internetusage.slt.lk/static/media/slt_logo_new.be681e06.png"
             alt="SLT Logo"
             className="w-[140px] mt-[10px]"
           />
