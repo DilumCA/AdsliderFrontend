@@ -36,16 +36,17 @@ const ImageCropperModal = ({ open, imageSrc, onClose, onCropComplete, aspect = 2
             onCropComplete={handleCropComplete}
           />
         </div>
-        <div className="flex items-center mt-4">
+         <div className="flex items-center mt-4">
           <span className="mr-2">Zoom</span>
-          <Slider
-            value={zoom}
-            min={1}
-            max={3}
-            step={0.1}
-            onChange={(_, value) => setZoom(value)}
-            style={{ width: 200 }}
-          />
+          <div className="w-[200px]">
+            <Slider
+              value={zoom}
+              min={1}
+              max={3}
+              step={0.1}
+              onChange={(_, value) => setZoom(value)}
+            />
+          </div>
         </div>
         <div className="flex justify-end mt-4 space-x-2">
           <button onClick={onClose} className="px-4 py-2 bg-gray-300 rounded">Cancel</button>

@@ -182,21 +182,20 @@ const AdvertisementManagement = () => {
   };
 
   return (
-    <div style={{ display: "flex", height: "100vh" }}>
+    <div className="flex h-screen">
       {/* Sidebar */}
       <Sidebar />
-
-      <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+<div className="flex-1 flex flex-col">
         {/* Navbar */}
         <AdminNavbar />
 
-        <div style={{ padding: "20px", flex: 1, overflowY: "auto" }}>
-          <Typography variant="h4" style={{ marginBottom: "20px" }}>
+      <div className="p-5 flex-1 overflow-y-auto bg-white">
+         <Typography variant="h4" className="mb-5">
             Advertisement Management
           </Typography>
 
           {/* Modern Search Bar */}
-          <TextField
+            <TextField
             label="Search by Title"
             variant="outlined"
             fullWidth
@@ -209,19 +208,19 @@ const AdvertisementManagement = () => {
                 </InputAdornment>
               ),
             }}
-            style={{ marginBottom: "20px" }}
+            className="mb-5"
           />
 
-          <Box
+         <Box
             display="flex"
             justifyContent="space-between"
             alignItems="center"
             mb={3}
           >
-            <Button
+              <Button
               variant="contained"
               color="primary"
-              onClick={toggleDialog(true)} // Open the dialog
+              onClick={toggleDialog(true)}
               sx={{
                 borderRadius: "12px",
                 paddingX: 3,
@@ -236,7 +235,7 @@ const AdvertisementManagement = () => {
             >
               Add Advertisement
             </Button>
-            <Button
+         <Button
               variant="outlined"
               startIcon={<FilterListIcon />}
               onClick={toggleDrawer(true)}
@@ -254,7 +253,7 @@ const AdvertisementManagement = () => {
                 },
               }}
             >
-              Filters
+               Filters
             </Button>
           </Box>
           {/* Dialog box for edit advertisement - dilum */}
@@ -272,9 +271,9 @@ const AdvertisementManagement = () => {
                 onCancel={() => setEditDialogOpen(false)}
                 onSuccess={() => {
                   setEditDialogOpen(false);
-                  setRefresh((prev) => !prev); // Refresh the ads list
+                  setRefresh((prev) => !prev);
                 }}
-                editAd={editAd} // Pass the ad being edited
+                editAd={editAd}
               />
             </DialogContent>
           </Dialog>
@@ -320,19 +319,12 @@ const AdvertisementManagement = () => {
                   <TableRow key={ad._id} hover>
                     {/* Ad Image (Clickable) */}
                     <TableCell>
-                      <img
-                        src={ad.adEnglish}
-                        alt={ad.title}
-                        style={{
-                          width: "100%",
-                          height: "auto",
-                          maxWidth: "120px",
-                          borderRadius: 5,
-                          cursor: "pointer",
-                          objectFit: "cover",
-                        }}
-                        onClick={() => handleImageClick(ad)} // Trigger dialog on image click
-                      />
+                     <img
+  src={ad.adEnglish}
+  alt={ad.title}
+  className="w-full max-w-[120px] rounded cursor-pointer object-cover"
+  onClick={() => handleImageClick(ad)}
+/>
                     </TableCell>
 
                     {/* Ad Title */}
@@ -526,16 +518,11 @@ const AdvertisementManagement = () => {
                       flexDirection="column"
                       alignItems="center"
                     >
-                      <img
-                        src={img}
-                        alt={`Advertisement Image ${labels[index]}`}
-                        style={{
-                          width: "200px",
-                          height: "auto",
-                          borderRadius: 5,
-                          marginBottom: "10px",
-                        }}
-                      />
+                    <img
+  src={img}
+  alt={`Advertisement Image ${labels[index]}`}
+  className="w-[200px] h-auto rounded mb-2.5"
+/>
                       <Typography variant="body2">{labels[index]}</Typography>{" "}
                       {/* Add label */}
                     </Box>
